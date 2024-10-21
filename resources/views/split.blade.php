@@ -19,7 +19,8 @@
         <!-- Empty Container -->
         <div @class([
                     'flex flex-col relative justify-center px-4 flex-grow',
-                    $emptyPanelBackgroundColor
+                    $emptyPanelBackgroundColor,
+                    'hidden md:block' => $mobileFormPosition === 'full',
                  ])
         ">
         @if($emptyPanelBackgroundImage)

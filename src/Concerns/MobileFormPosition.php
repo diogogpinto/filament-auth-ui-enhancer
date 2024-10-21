@@ -8,8 +8,8 @@ trait MobileFormPosition
 
     public function mobileFormPosition(string $position = 'top'): self
     {
-        if (! in_array($position, ['top', 'bottom'])) {
-            throw new \InvalidArgumentException("Form position must be 'top' or 'bottom'.");
+        if (! in_array($position, ['top', 'bottom', 'full'])) {
+            throw new \InvalidArgumentException("Form position must be 'top', 'bottom' or 'full'.");
         }
 
         $this->mobileFormPosition = $position;

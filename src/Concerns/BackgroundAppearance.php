@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace DiogoGPinto\AuthUIEnhancer\Concerns;
 
 trait BackgroundAppearance

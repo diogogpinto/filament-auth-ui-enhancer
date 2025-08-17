@@ -1,6 +1,5 @@
 {
     "name": "diogogpinto/filament-auth-ui-enhancer",
-    "version": "2.0.0",
     "description": "This Filament plugin empowers you to transform your auth pages with ease, allowing you to make them truly stand out. It offers a flexible alternative to the default auth pages in the Filament Panels package.",
     "keywords": [
         "diogogpinto",
@@ -28,15 +27,10 @@
     },
     "require-dev": {
         "laravel/pint": "^1.0",
-        "nunomaduro/collision": "^7.9||^8.0",
-        "nunomaduro/larastan": "^2.0.1",
-        "orchestra/testbench": "^8.0|^9.0|^10.0",
-        "pestphp/pest": "^2.0|^3.7",
-        "pestphp/pest-plugin-arch": "^2.0|^3.0",
-        "pestphp/pest-plugin-laravel": "^2.0|^3.1",
-        "phpstan/extension-installer": "^1.1",
-        "phpstan/phpstan-deprecation-rules": "^1.0",
-        "phpstan/phpstan-phpunit": "^1.0"
+        "orchestra/testbench": "^9.0|^10.0",
+        "pestphp/pest": "^3.7",
+        "pestphp/pest-plugin-laravel": "^3.0",
+        "pestphp/pest-plugin-livewire": "^3.0"
     },
     "autoload": {
         "psr-4": {

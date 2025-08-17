@@ -3,7 +3,7 @@
 namespace DiogoGPinto\AuthUIEnhancer\Pages\Auth\PasswordReset;
 
 use DiogoGPinto\AuthUIEnhancer\Pages\Auth\Concerns\HasCustomLayout;
-use Filament\Pages\Auth\PasswordReset\ResetPassword;
+use Filament\Auth\Pages\PasswordReset\ResetPassword;
 
 class AuthUiEnhancerResetPassword extends ResetPassword
 {

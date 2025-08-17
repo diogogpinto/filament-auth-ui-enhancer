@@ -1,5 +1,6 @@
 {
     "name": "diogogpinto/filament-auth-ui-enhancer",
+    "version": "2.0.0",
     "description": "This Filament plugin empowers you to transform your auth pages with ease, allowing you to make them truly stand out. It offers a flexible alternative to the default auth pages in the Filament Panels package.",
     "keywords": [
         "diogogpinto",
@@ -72,6 +73,6 @@
             }
         }
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "prefer-stable": true
 }

@@ -21,7 +21,7 @@ trait BackgroundAppearance
 
     public function getFormPanelBackgroundColor(): ?string
     {
-        return $this->formPanelBackgroundColor ? 'rgb(' . $this->formPanelBackgroundColor . ')' : 'transparent';
+        return $this->formPanelBackgroundColor ?: 'transparent';
     }
 
     public function emptyPanelBackgroundColor(array $color, int $shade = 500): self
@@ -33,7 +33,7 @@ trait BackgroundAppearance
 
     public function getEmptyPanelBackgroundColor(): ?string
     {
-        return $this->emptyPanelBackgroundColor ? 'rgb(' . $this->emptyPanelBackgroundColor . ')' : 'rgb(var(--primary-500))';
+        return $this->emptyPanelBackgroundColor ?: 'var(--primary-500)';
     }
 
     public function emptyPanelBackgroundImageUrl(?string $url): self

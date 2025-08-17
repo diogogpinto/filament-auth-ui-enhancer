@@ -3,7 +3,7 @@
 namespace DiogoGPinto\AuthUIEnhancer\Pages\Auth;
 
 use DiogoGPinto\AuthUIEnhancer\Pages\Auth\Concerns\HasCustomLayout;
-use Filament\Pages\Auth\Register;
+use Filament\Auth\Pages\Register;
 
 class AuthUiEnhancerRegister extends Register
 {

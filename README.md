@@ -19,6 +19,7 @@ Setting it up is a breeze, and it comes packed with a variety of customizable fe
 
 ## Navigation
 
+-   [Version Compability](#version-compatibility)
 -   [Installation](#installation)
 -   [Usage](#usage)
     -   [AuthPage Discovery](#auth-page-discovery)
@@ -33,6 +34,13 @@ Setting it up is a breeze, and it comes packed with a variety of customizable fe
 -   [Security Vulnerabilities](#security-vulnerabilities)
 -   [Credits](#credits)
 -   [License](#license)
+
+## Version Compatibility
+
+| Plugin Version | Filament Version | PHP Version |
+| -------------- | ---------------- | ----------- |
+| `^2.0`         | `^4.0`           | `^8.2`      |
+| `^1.0`         | `^3.0`           | `^8.1`      |
 
 ## Installation
 

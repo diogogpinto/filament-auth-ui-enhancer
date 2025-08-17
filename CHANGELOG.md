@@ -2,6 +2,24 @@
 
 All notable changes to `filament-auth-ui-enhancer` will be documented in this file.
 
+## v2.0.0 - 2025-08-17
+
+### 🎊 Filament V4 Support
+
+Thank you so much to @CodeWithDennis for the amazing work on updating this plugin to Filament's v4.
+
+| Plugin Version | Filament Version | PHP Version |
+| -------------- | ---------------- | ----------- |
+| `^2.0`         | `^4.0`           | `^8.2`      |
+| `^1.0`         | `^3.0`           | `^8.1`      |
+
+#### What's Changed
+
+* Bump dependabot/fetch-metadata from 2.3.0 to 2.4.0 by @dependabot[bot] in https://github.com/diogogpinto/filament-auth-ui-enhancer/pull/17
+* Filament `4.x` support by @CodeWithDennis in https://github.com/diogogpinto/filament-auth-ui-enhancer/pull/20
+
+**Full Changelog**: https://github.com/diogogpinto/filament-auth-ui-enhancer/compare/v1.0.2...v2.0.0
+
 ## v1.0.2 - 2025-03-17
 
 *NEW: You can now display custom views on the empty panel.*

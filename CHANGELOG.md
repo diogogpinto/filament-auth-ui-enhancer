@@ -2,6 +2,24 @@
 
 All notable changes to `filament-auth-ui-enhancer` will be documented in this file.
 
+## v2.0.1 - 2025-12-15
+
+### What's Changed
+
+* Bump aglipanci/laravel-pint-action from 2.5 to 2.6 by @dependabot[bot] in https://github.com/diogogpinto/filament-auth-ui-enhancer/pull/24
+* Bump stefanzweifel/git-auto-commit-action from 5 to 7 by @dependabot[bot] in https://github.com/diogogpinto/filament-auth-ui-enhancer/pull/26
+* Bump actions/checkout from 4 to 6 by @dependabot[bot] in https://github.com/diogogpinto/filament-auth-ui-enhancer/pull/27
+* Bump actions/cache from 4 to 5 by @dependabot[bot] in https://github.com/diogogpinto/filament-auth-ui-enhancer/pull/28
+* bugfix: add topbar with database notifications and user menu to custom auth layout by @diogogpinto in https://github.com/diogogpinto/filament-auth-ui-enhancer/pull/29
+
+### New Contributors
+
+* @diogogpinto made their first contribution in https://github.com/diogogpinto/filament-auth-ui-enhancer/pull/29
+
+Thanks again to [Geridoc](https://www.geridoc.pt) and [Geribox](https://www.geribox.pt) that allowed me to refactor this to v4 and fix these long standing bugs.
+
+**Full Changelog**: https://github.com/diogogpinto/filament-auth-ui-enhancer/compare/v2.0.0...v2.0.1
+
 ## v2.0.0 - 2025-08-17
 
 ### 🎊 Filament V4 Support

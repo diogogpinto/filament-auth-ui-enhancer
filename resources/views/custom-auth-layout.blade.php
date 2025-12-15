@@ -16,6 +16,21 @@
           'flex-col-reverse' => $mobileFormPanelPosition === 'top' && $showEmptyPanelOnMobile,
         ])
     >
+            @if (($hasTopbar ?? true) && filament()->auth()->check())
+            <div class="fi-simple-layout-header">
+                @if (filament()->hasDatabaseNotifications())
+                    @livewire(Filament\Livewire\DatabaseNotifications::class, [
+                        'lazy' => filament()->hasLazyLoadedDatabaseNotifications(),
+                        'position' => \Filament\Enums\DatabaseNotificationsPosition::Topbar,
+                    ])
+                @endif
+
+                @if (filament()->hasUserMenu())
+                    @livewire(Filament\Livewire\SimpleUserMenu::class)
+                @endif
+            </div>
+        @endif
+
         <!-- Empty Container -->
         <div @class([
             'custom-auth-empty-panel relative justify-center px-4',

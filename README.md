@@ -39,7 +39,7 @@ Setting it up is a breeze, and it comes packed with a variety of customizable fe
 
 | Plugin Version | Filament Version | PHP Version |
 | -------------- | ---------------- | ----------- |
-| `^2.0`         | `^4.0`           | `^8.2`      |
+| `^2.0`         | `^4.0` \| `^5.0` | `^8.2`      |
 | `^1.0`         | `^3.0`           | `^8.1`      |
 
 ## Installation
@@ -53,7 +53,7 @@ composer require diogogpinto/filament-auth-ui-enhancer
 In an effort to align with Filament's theming methodology you will need to use a custom theme to use this plugin.
 
 > [!IMPORTANT]
-> If you have not set up a custom theme, follow the instructions in the [Filament Docs](https://filamentphp.com/docs/3.x/panels/themes#creating-a-custom-theme) first.
+> If you have not set up a custom theme, follow the instructions in the [Filament Docs](https://filamentphp.com/docs/5.x/styling/overview) first.
 
 1. Add the following to your `theme.css` file:
 
@@ -62,7 +62,7 @@ In an effort to align with Filament's theming methodology you will need to use a
 ```
 
 > [!IMPORTANT]
-> The above content should be placed in your filament theme's `tailwind.config.js` file, under the /resources/css/filament path
+> The above content should be placed in your filament theme's `theme.css` file, under the /resources/css/filament/{panel-name} path
 
 2. Run `npm run build` in your terminal
 
@@ -317,6 +317,9 @@ Please review [our security policy](../../security/policy) on how to report secu
 -   [Diogo Pinto](https://github.com/diogogpinto) - you can follow me on [Twitter](https://x.com/diogogpinto)
 -   [Joao Patrício](https://github.com/ijpatricio) for his amazing support
 -   [CodeWithDennis](https://github.com/CodeWithDennis) for his early contributions
+-   [Alexandre](https://github.com/alexandrevega) for making the `views`feature possible
+-   [Jicoy](https://github.com/Jicoy) for his contribution on v4 upgrade
+-   [Davide Prevosto](https://github.com/davideprevosto) for his contribution on v5 upgrade
 -   [Geridoc](https://www.geridoc.pt) for allowing me to release our packages with Open Source licenses
 -   [All Contributors](../../contributors)
 

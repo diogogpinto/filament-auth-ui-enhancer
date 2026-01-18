@@ -19,7 +19,7 @@ Setting it up is a breeze, and it comes packed with a variety of customizable fe
 
 ## Navigation
 
--   [Version Compability](#version-compatibility)
+-   [Version Compatibility](#version-compatibility)
 -   [Installation](#installation)
 -   [Usage](#usage)
     -   [AuthPage Discovery](#auth-page-discovery)
@@ -39,12 +39,12 @@ Setting it up is a breeze, and it comes packed with a variety of customizable fe
 
 | Plugin Version | Filament Version | PHP Version |
 | -------------- | ---------------- | ----------- |
-| `^2.0`         | `^4.0`           | `^8.2`      |
+| `^2.0`         | `^4.0` \| `^5.0` | `^8.2`      |
 | `^1.0`         | `^3.0`           | `^8.1`      |
 
 ## Installation
 
-First, starting by installing the plugin via composer:
+Start by installing the plugin via composer:
 
 ```bash
 composer require diogogpinto/filament-auth-ui-enhancer
@@ -53,7 +53,7 @@ composer require diogogpinto/filament-auth-ui-enhancer
 In an effort to align with Filament's theming methodology you will need to use a custom theme to use this plugin.
 
 > [!IMPORTANT]
-> If you have not set up a custom theme, follow the instructions in the [Filament Docs](https://filamentphp.com/docs/3.x/panels/themes#creating-a-custom-theme) first.
+> If you have not set up a custom theme, follow the instructions in the [Filament Docs](https://filamentphp.com/docs/5.x/styling/overview) first.
 
 1. Add the following to your `theme.css` file:
 
@@ -62,7 +62,7 @@ In an effort to align with Filament's theming methodology you will need to use a
 ```
 
 > [!IMPORTANT]
-> The above content should be placed in your filament theme's `tailwind.config.js` file, under the /resources/css/filament path
+> The above content should be placed in your filament theme's `theme.css` file, under the /resources/css/filament/{panel-name} path
 
 2. Run `npm run build` in your terminal
 
@@ -101,7 +101,7 @@ $panel
     ->login(YourLoginClass::class)
 ```
 
-Just add the following trait to `YouLoginClass`:
+Just add the following trait to `YourLoginClass`:
 
 ```php
 use DiogoGPinto\AuthUIEnhancer\Pages\Auth\Concerns\HasCustomLayout;
@@ -202,9 +202,9 @@ You can set an image to be displayed on the empty panel, and control its opacity
 ->emptyPanelBackgroundImageUrl('images/login.webp')
 ```
 
-You can pass an asset url, with Laravel's function `asset('images/login.webp')`.
+You can pass an asset URL with Laravel's `asset('images/login.webp')` function.
 
-If you would like to chance the image opacity of your image, you can use the following method:
+If you would like to change the image opacity, you can use the following method:
 
 ```php
 ->emptyPanelBackgroundImageOpacity('50%')
@@ -243,7 +243,7 @@ You can decide to use a custom view inside the empty panel instead of a backgrou
 ```
 
 The method only accepts the view name as a parameter.
-If both, background image and custom view are give, the plugin will prioritize the view.
+If both background image and custom view are provided, the plugin will prioritize the view.
 
 #### Hide Empty Panel on Mobile Devices
 
@@ -255,7 +255,7 @@ You can just use the following method, so the empty panels disappears on mobile 
 
 ## Further Customization - CSS
 
-You can create further customizations in your theme's CSS file. The following classes are avaliable:
+You can create further customizations in your theme's CSS file. The following classes are available:
 
 ```css
 /* Whole page wrapper */
@@ -317,6 +317,9 @@ Please review [our security policy](../../security/policy) on how to report secu
 -   [Diogo Pinto](https://github.com/diogogpinto) - you can follow me on [Twitter](https://x.com/diogogpinto)
 -   [Joao Patrício](https://github.com/ijpatricio) for his amazing support
 -   [CodeWithDennis](https://github.com/CodeWithDennis) for his early contributions
+-   [Alexandre](https://github.com/alexandrevega) for making the `views` feature possible
+-   [Jicoy](https://github.com/Jicoy) for his contribution on v4 upgrade
+-   [Davide Prevosto](https://github.com/davideprevosto) for his contribution on v5 upgrade
 -   [Geridoc](https://www.geridoc.pt) for allowing me to release our packages with Open Source licenses
 -   [All Contributors](../../contributors)
 

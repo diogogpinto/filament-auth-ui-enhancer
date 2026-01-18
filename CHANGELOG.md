@@ -2,6 +2,20 @@
 
 All notable changes to `filament-auth-ui-enhancer` will be documented in this file.
 
+## v2.0.2 - 2026-01-18
+
+### What's Changed
+
+* Bump dependabot/fetch-metadata from 2.4.0 to 2.5.0 by @dependabot[bot] in https://github.com/diogogpinto/filament-auth-ui-enhancer/pull/30
+* Update composer.json for Filament 5 by @davideprevosto in https://github.com/diogogpinto/filament-auth-ui-enhancer/pull/31
+* chore: fix README typos and improve clarity by @diogogpinto in https://github.com/diogogpinto/filament-auth-ui-enhancer/pull/32
+
+### New Contributors
+
+* @davideprevosto made their first contribution in https://github.com/diogogpinto/filament-auth-ui-enhancer/pull/31
+
+**Full Changelog**: https://github.com/diogogpinto/filament-auth-ui-enhancer/compare/v2.0.1...v2.0.2
+
 ## v2.0.1 - 2025-12-15
 
 ### What's Changed

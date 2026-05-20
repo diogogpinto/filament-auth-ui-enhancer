@@ -2,13 +2,22 @@
 
 namespace DiogoGPinto\AuthUIEnhancer\Concerns;
 
+use Closure;
+use Filament\Support\Concerns\EvaluatesClosures;
+
 trait FormPosition
 {
-    public string $formPanelPosition = 'right';
+    use EvaluatesClosures;
 
-    public function formPanelPosition(string $position = 'right'): self
+    public string|Closure $formPanelPosition = 'right';
+
+    /**
+     * @param string|Closure $position
+     * @return static
+     */
+    public function formPanelPosition(string|Closure $position = 'right'): static
     {
-        if (! in_array($position, ['left', 'right'])) {
+        if (is_string($position) && ! $this->isValidFormPosition($position)) {
             throw new \InvalidArgumentException("Form position must be 'left' or 'right'.");
         }
 
@@ -17,8 +26,19 @@ trait FormPosition
         return $this;
     }
 
+    protected function isValidFormPosition(string $position): bool
+    {
+        return in_array($position, ['left', 'right']);
+    }
+
     public function getFormPanelPosition(): string
     {
-        return $this->formPanelPosition;
+        $position = $this->evaluate($this->formPanelPosition);
+
+        if (! $this->isValidFormPosition($position)) {
+            throw new \InvalidArgumentException("Form position must be 'left' or 'right'.");
+        }
+
+        return $position;
     }
 }

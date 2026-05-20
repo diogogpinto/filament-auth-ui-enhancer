@@ -2,41 +2,74 @@
 
 namespace DiogoGPinto\AuthUIEnhancer\Concerns;
 
+use Closure;
+use Filament\Support\Concerns\EvaluatesClosures;
+
 trait BackgroundAppearance
 {
-    public ?string $formPanelBackgroundColor = null;
+    use EvaluatesClosures;
 
-    public ?string $emptyPanelBackgroundColor = null;
+    /** @var array<string>|Closure|null */
+    public array|Closure|null $formPanelBackgroundColor = null;
 
-    public ?string $emptyPanelBackgroundImageUrl = null;
+    public int|Closure $formPanelBackgroundColorShade = 500;
 
-    public ?string $emptyPanelBackgroundImageOpacity = '100%';
+    /** @var array<string>|Closure|null */
+    public array|Closure|null $emptyPanelBackgroundColor = null;
 
-    public function formPanelBackgroundColor(string | array $color, int $shade = 500): self
+    public int|Closure $emptyPanelBackgroundColorShade = 500;
+
+    public string|Closure|null $emptyPanelBackgroundImageUrl = null;
+
+    public string|Closure|null $emptyPanelBackgroundImageOpacity = '100%';
+
+    /**
+     * @param array<string>|Closure $color
+     * @param int|Closure $shade
+     * @return static
+     */
+    public function formPanelBackgroundColor(array|Closure $color, int|Closure $shade = 500): static
     {
-        $this->formPanelBackgroundColor = $color[$shade];
+        $this->formPanelBackgroundColor = $color;
+        $this->formPanelBackgroundColorShade = $shade;
 
         return $this;
     }
 
     public function getFormPanelBackgroundColor(): ?string
     {
-        return $this->formPanelBackgroundColor ?: 'transparent';
+        $color = $this->evaluate($this->formPanelBackgroundColor);
+        $shade = $this->evaluate($this->formPanelBackgroundColorShade);
+
+        return ($color[$shade] ?? null) ?: 'transparent';
     }
 
-    public function emptyPanelBackgroundColor(array $color, int $shade = 500): self
+    /**
+     * @param array<string>|Closure $color
+     * @param int|Closure $shade
+     * @return static
+     */
+    public function emptyPanelBackgroundColor(array|Closure $color, int|Closure $shade = 500): static
     {
-        $this->emptyPanelBackgroundColor = $color[$shade];
+        $this->emptyPanelBackgroundColor = $color;
+        $this->emptyPanelBackgroundColorShade = $shade;
 
         return $this;
     }
 
     public function getEmptyPanelBackgroundColor(): ?string
     {
-        return $this->emptyPanelBackgroundColor ?: 'var(--primary-500)';
+        $color = $this->evaluate($this->emptyPanelBackgroundColor);
+        $shade = $this->evaluate($this->emptyPanelBackgroundColorShade);
+
+        return ($color[$shade] ?? null) ?: 'var(--primary-500)';
     }
 
-    public function emptyPanelBackgroundImageUrl(?string $url): self
+    /**
+     * @param string|Closure|null $url
+     * @return static
+     */
+    public function emptyPanelBackgroundImageUrl(string|Closure|null $url): static
     {
         $this->emptyPanelBackgroundImageUrl = $url;
 
@@ -45,10 +78,14 @@ trait BackgroundAppearance
 
     public function getEmptyPanelBackgroundImageUrl(): ?string
     {
-        return $this->emptyPanelBackgroundImageUrl;
+        return $this->evaluate($this->emptyPanelBackgroundImageUrl);
     }
 
-    public function emptyPanelBackgroundImageOpacity(?string $opacity): self
+    /**
+     * @param string|Closure|null $opacity
+     * @return static
+     */
+    public function emptyPanelBackgroundImageOpacity(string|Closure|null $opacity): static
     {
         $this->emptyPanelBackgroundImageOpacity = $opacity;
 
@@ -57,6 +94,6 @@ trait BackgroundAppearance
 
     public function getEmptyPanelBackgroundImageOpacity(): ?string
     {
-        return $this->emptyPanelBackgroundImageOpacity;
+        return $this->evaluate($this->emptyPanelBackgroundImageOpacity);
     }
 }

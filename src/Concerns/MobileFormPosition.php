@@ -2,13 +2,22 @@
 
 namespace DiogoGPinto\AuthUIEnhancer\Concerns;
 
+use Closure;
+use Filament\Support\Concerns\EvaluatesClosures;
+
 trait MobileFormPosition
 {
-    public string $mobileFormPanelPosition = 'top';
+    use EvaluatesClosures;
 
-    public function mobileFormPanelPosition(string $position = 'top'): self
+    public string|Closure $mobileFormPanelPosition = 'top';
+
+    /**
+     * @param string|Closure $position
+     * @return static
+     */
+    public function mobileFormPanelPosition(string|Closure $position = 'top'): static
     {
-        if (! in_array($position, ['top', 'bottom'])) {
+        if (is_string($position) && ! $this->isValidMobileFormPanelPosition($position)) {
             throw new \InvalidArgumentException("Form position must be 'top' or 'bottom'.");
         }
 
@@ -17,8 +26,19 @@ trait MobileFormPosition
         return $this;
     }
 
+    protected function isValidMobileFormPanelPosition(string $position): bool
+    {
+        return in_array($position, ['top', 'bottom']);
+    }
+
     public function getMobileFormPanelPosition(): string
     {
-        return $this->mobileFormPanelPosition;
+        $position = $this->evaluate($this->mobileFormPanelPosition);
+
+        if (! $this->isValidMobileFormPanelPosition($position)) {
+            throw new \InvalidArgumentException("Form position must be 'top' or 'bottom'.");
+        }
+
+        return $position;
     }
 }

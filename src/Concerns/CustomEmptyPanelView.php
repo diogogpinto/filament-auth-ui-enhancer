@@ -2,11 +2,20 @@
 
 namespace DiogoGPinto\AuthUIEnhancer\Concerns;
 
+use Closure;
+use Filament\Support\Concerns\EvaluatesClosures;
+
 trait CustomEmptyPanelView
 {
-    public ?string $emptyPanelView = null;
+    use EvaluatesClosures;
 
-    public function emptyPanelView(string $view): self
+    public string|Closure|null $emptyPanelView = null;
+
+    /**
+     * @param string|Closure|null $view
+     * @return static
+     */
+    public function emptyPanelView(string|Closure|null $view): static
     {
         $this->emptyPanelView = $view;
 
@@ -15,6 +24,6 @@ trait CustomEmptyPanelView
 
     public function getEmptyPanelView(): ?string
     {
-        return $this->emptyPanelView;
+        return $this->evaluate($this->emptyPanelView);
     }
 }

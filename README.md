@@ -26,6 +26,7 @@ Setting it up is a breeze, and it comes packed with a variety of customizable fe
 -   [Customizing the Auth UI](#customizing-the-auth-ui)
     -   [Customizing the Form Panel](#customizing-the-form-panel)
     -   [Customizing the Empty Panel](#customizing-the-empty-panel)
+-   [Using Closures](#using-closures)
 -   [Further Customization - CSS](#further-customization---css)
 -   [Working Examples](#working-example)
 -   [Todo](#todo)
@@ -251,6 +252,18 @@ You can just use the following method, so the empty panels disappears on mobile 
 
 ```php
 ->showEmptyPanelOnMobile(false)
+```
+
+## Using Closures
+
+Every customization method also accepts a `Closure` instead of a static value. The closure is evaluated on getters, which is useful when the configuration depends on runtime state (e.g., values stored in the database, the current request, or the authenticated user).
+
+```php
+use DiogoGPinto\AuthUIEnhancer\AuthUIEnhancerPlugin;
+
+AuthUIEnhancerPlugin::make()
+    ->formPanelPosition(fn () => Filament::getCurrentPanel()?->getId() === 'admin' ? 'left' : 'right')
+    ->emptyPanelBackgroundImageUrl(fn () => asset('images/' . Filament::getCurrentPanel()?->getId() . '-login.webp'))
 ```
 
 ## Further Customization - CSS

@@ -24,9 +24,7 @@ trait BackgroundAppearance
     public string|Closure|null $emptyPanelBackgroundImageOpacity = '100%';
 
     /**
-     * @param array<string>|Closure $color
-     * @param int|Closure $shade
-     * @return static
+     * @param  array<string>|Closure  $color
      */
     public function formPanelBackgroundColor(array|Closure $color, int|Closure $shade = 500): static
     {
@@ -45,9 +43,7 @@ trait BackgroundAppearance
     }
 
     /**
-     * @param array<string>|Closure $color
-     * @param int|Closure $shade
-     * @return static
+     * @param  array<string>|Closure  $color
      */
     public function emptyPanelBackgroundColor(array|Closure $color, int|Closure $shade = 500): static
     {
@@ -65,10 +61,6 @@ trait BackgroundAppearance
         return ($color[$shade] ?? null) ?: 'var(--primary-500)';
     }
 
-    /**
-     * @param string|Closure|null $url
-     * @return static
-     */
     public function emptyPanelBackgroundImageUrl(string|Closure|null $url): static
     {
         $this->emptyPanelBackgroundImageUrl = $url;
@@ -81,10 +73,6 @@ trait BackgroundAppearance
         return $this->evaluate($this->emptyPanelBackgroundImageUrl);
     }
 
-    /**
-     * @param string|Closure|null $opacity
-     * @return static
-     */
     public function emptyPanelBackgroundImageOpacity(string|Closure|null $opacity): static
     {
         $this->emptyPanelBackgroundImageOpacity = $opacity;

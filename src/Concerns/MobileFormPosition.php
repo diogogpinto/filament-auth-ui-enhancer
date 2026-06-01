@@ -11,10 +11,6 @@ trait MobileFormPosition
 
     public string|Closure $mobileFormPanelPosition = 'top';
 
-    /**
-     * @param string|Closure $position
-     * @return static
-     */
     public function mobileFormPanelPosition(string|Closure $position = 'top'): static
     {
         if (is_string($position) && ! $this->isValidMobileFormPanelPosition($position)) {

@@ -69,9 +69,9 @@ class AuthUIEnhancerPlugin implements Plugin
                 return '
                     <style>
                     :root {
-                    --form-panel-width: ' . $this->getFormPanelWidth() . ';
-                    --form-panel-background-color: ' . $this->getFormPanelBackgroundColor() . ';
-                    --empty-panel-background-color: ' . $this->getEmptyPanelBackgroundColor() . ';
+                    --form-panel-width: '.$this->getFormPanelWidth().';
+                    --form-panel-background-color: '.$this->getFormPanelBackgroundColor().';
+                    --empty-panel-background-color: '.$this->getEmptyPanelBackgroundColor().';
                     }
                     </style>
                 ';

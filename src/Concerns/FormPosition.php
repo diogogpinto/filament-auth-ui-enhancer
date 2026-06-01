@@ -11,10 +11,6 @@ trait FormPosition
 
     public string|Closure $formPanelPosition = 'right';
 
-    /**
-     * @param string|Closure $position
-     * @return static
-     */
     public function formPanelPosition(string|Closure $position = 'right'): static
     {
         if (is_string($position) && ! $this->isValidFormPosition($position)) {

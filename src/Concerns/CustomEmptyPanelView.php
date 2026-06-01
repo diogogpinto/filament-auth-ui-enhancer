@@ -11,10 +11,6 @@ trait CustomEmptyPanelView
 
     public string|Closure|null $emptyPanelView = null;
 
-    /**
-     * @param string|Closure|null $view
-     * @return static
-     */
     public function emptyPanelView(string|Closure|null $view): static
     {
         $this->emptyPanelView = $view;

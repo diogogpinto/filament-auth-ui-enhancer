@@ -11,10 +11,6 @@ trait FormPanelWidth
 
     public string|Closure $formPanelWidth = '50%';
 
-    /**
-     * @param string|Closure $width
-     * @return static
-     */
     public function formPanelWidth(string|Closure $width = '50%'): static
     {
         if (is_string($width) && ! $this->isValidWidth($width)) {

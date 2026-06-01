@@ -11,10 +11,6 @@ trait ShowEmptyPanelOnMobile
 
     public bool|Closure $showEmptyPanelOnMobile = true;
 
-    /**
-     * @param bool|Closure $show
-     * @return static
-     */
     public function showEmptyPanelOnMobile(bool|Closure $show = true): static
     {
         $this->showEmptyPanelOnMobile = $show;

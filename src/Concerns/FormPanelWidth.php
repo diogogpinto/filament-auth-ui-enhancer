@@ -2,13 +2,18 @@
 
 namespace DiogoGPinto\AuthUIEnhancer\Concerns;
 
+use Closure;
+use Filament\Support\Concerns\EvaluatesClosures;
+
 trait FormPanelWidth
 {
-    public string $formPanelWidth = '50%';
+    use EvaluatesClosures;
 
-    public function formPanelWidth(string $width = '50%'): self
+    public string|Closure $formPanelWidth = '50%';
+
+    public function formPanelWidth(string|Closure $width = '50%'): static
     {
-        if (! $this->isValidWidth($width)) {
+        if (is_string($width) && ! $this->isValidWidth($width)) {
             throw new \InvalidArgumentException('Sizes must be expressed in rem, %, px, em, vw, vh, pt');
         }
 
@@ -27,6 +32,12 @@ trait FormPanelWidth
 
     public function getFormPanelWidth(): string
     {
-        return $this->formPanelWidth;
+        $width = $this->evaluate($this->formPanelWidth);
+
+        if (! $this->isValidWidth($width)) {
+            throw new \InvalidArgumentException('Sizes must be expressed in rem, %, px, em, vw, vh, pt');
+        }
+
+        return $width;
     }
 }
